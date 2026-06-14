@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<title>陳嘉翔 Chia-Hsiang, Chen — 資料科學 × AI 應用工程 作品集</title>
+<meta name="description" content="資料科學碩士｜橫跨業務、數據分析與 AI 系統工程。LLM 多代理、統計建模、大規模資料工程作品集。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%2315b8a6'/%3E%3Ctext x='32' y='44' font-size='30' font-weight='700' fill='%23ffffff' text-anchor='middle' font-family='Arial,sans-serif'%3ECH%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --accent:#15b8a6; --accent-d:#0c8b7f; --accent2:#2bd4c0;
+    --ink:#16252a; --sub:#5d6f75; --line:#e5ecee; --bg:#f5f8f8; --card:#fff;
+    --chip:#eef7f6; --hero1:#0c2f30; --hero2:#114e49;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background-color:var(--bg);
+    background-image:radial-gradient(rgba(21,184,166,.06) 1px,transparent 1px);background-size:22px 22px;color:var(--ink);
+    font-family:"Noto Sans TC","Microsoft JhengHei",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65;}
+  a{color:#0c8b7f}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+  svg text{font-family:"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif}
+
+  /* HERO */
+  .hero{background:radial-gradient(900px 400px at 80% -10%,rgba(43,212,192,.22),transparent),
+        linear-gradient(140deg,var(--hero1),var(--hero2));color:#eafffb;padding:60px 0 46px;}
+  .eyebrow{letter-spacing:3px;font-size:12.5px;color:#7fe9da;font-weight:700;text-transform:uppercase}
+  .hero h1{margin:8px 0 6px;font-size:42px;letter-spacing:1px}
+  .hero h1 small{font-weight:400;font-size:20px;color:#bdeee6;margin-left:8px}
+  .hero .tagline{font-size:18px;color:#d6fff8;max-width:680px;margin:0 0 14px}
+  .hero .meta{font-size:14px;color:#9fded3}
+  .seeking{display:inline-flex;align-items:center;gap:9px;margin-top:14px;background:rgba(43,212,192,.14);border:1px solid rgba(43,212,192,.45);color:#eafffb;font-size:14.5px;font-weight:600;border-radius:22px;padding:7px 16px}
+  .seeking .dot{width:9px;height:9px;border-radius:50%;background:#39e0a0;box-shadow:0 0 0 3px rgba(57,224,160,.25)}
+  .hero .cta{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap}
+  .btn{display:inline-block;text-decoration:none;font-size:14px;font-weight:600;border-radius:8px;padding:9px 16px;border:1px solid transparent}
+  .btn.p{background:var(--accent2);color:#06302c}
+  .btn.o{border-color:#3f7e78;color:#cffaf2}
+  .btn.s{background:#fff;color:#0c6b62}
+  /* numbers */
+  .nums{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:34px}
+  .nums .n{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:14px 12px;text-align:center}
+  .nums .n b{display:block;font-size:25px;color:#fff;letter-spacing:.5px}
+  .nums .n span{font-size:12px;color:#a9e2d8}
+
+  section{padding:46px 0}
+  .h2{font-size:13px;letter-spacing:2px;color:var(--accent-d);font-weight:800;text-transform:uppercase}
+  .h2 + .lead{color:var(--sub);font-size:14.5px;margin:6px 0 22px}
+  h2.title{font-size:25px;margin:4px 0 0}
+
+  .about{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 28px}
+  .about p{margin:0;font-size:15.5px;color:#33444a}
+  .skills{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+  .skills .c{background:var(--chip);border:1px solid #dcefec;border-radius:7px;padding:3px 10px;font-size:12.5px;color:#2c5b56}
+
+  /* portfolio */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .proj{grid-column:span 1;background:var(--card);border:1px solid var(--line);border-radius:16px;
+    overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,.04);transition:transform .15s,box-shadow .15s}
+  .proj:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(12,80,73,.12)}
+  .proj.feat{grid-column:span 2;border-color:var(--accent)}
+  .visual{display:block;width:100%;height:208px;object-fit:cover;background:#eef3f3;border-bottom:1px solid var(--line)}
+  .proj.feat .visual{height:230px}
+  .vbox{width:100%;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#f7fbfb,#eef5f4)}
+  .body{padding:18px 20px 20px}
+  .kicker{font-size:11.5px;font-weight:800;letter-spacing:1px;color:var(--accent-d);text-transform:uppercase}
+  .body h3{margin:5px 0 8px;font-size:18.5px;line-height:1.35}
+  .feat .body h3{font-size:22px}
+  .body p{margin:0 0 12px;font-size:14px;color:#3a4a50}
+  .ptags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+  .ptags span{background:#f1f6f6;border:1px solid #e3eeed;border-radius:6px;padding:2px 9px;font-size:11.5px;color:#4c6660}
+  .acts{display:flex;gap:8px;flex-wrap:wrap}
+  .acts a{font-size:13px;font-weight:600;text-decoration:none;border-radius:7px;padding:7px 13px}
+  .acts a.live{background:var(--accent);color:#fff}
+  .acts a.gh{border:1px solid var(--line);color:#33524d;background:#fafdfc}
+  .acts a.muted{color:#8a989d;border:1px dashed var(--line);background:#fafbfb}
+
+  /* footer info */
+  .info{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:26px}
+  .info h4{font-size:13px;letter-spacing:1px;color:var(--accent-d);margin:0 0 12px;text-transform:uppercase}
+  .xp{margin-bottom:14px}
+  .xp .r{font-weight:700;font-size:14.5px}
+  .xp .o{color:var(--sub);font-size:13px}
+  .xp .d{color:var(--sub);font-size:12px}
+  .xp ul{margin:5px 0 0;padding-left:17px}
+  .xp li{font-size:13px;color:#3c4a50;margin-bottom:3px}
+  .info ul.plain{list-style:none;padding:0;margin:0}
+  .info ul.plain li{font-size:13.5px;color:#3c4a50;margin-bottom:8px}
+  .foot{background:var(--hero1);color:#cdeee8;padding:30px 0;margin-top:30px;text-align:center;font-size:13.5px}
+  .foot a{color:#7fe9da;text-decoration:none;font-weight:600}
+  .editnote{background:#fff7e6;border:1px solid #ffe1a8;color:#7a5b13;font-size:12.5px;padding:8px 14px;text-align:center}
+
+  @media(max-width:760px){
+    .nums{grid-template-columns:repeat(2,1fr)}
+    .grid{grid-template-columns:1fr}
+    .proj.feat{grid-column:span 1}
+    .info{grid-template-columns:1fr}
+    .hero h1{font-size:32px}
+  }
+  /* hover：數字卡只變亮不上浮 */
+  .nums .n{transition:background .15s,border-color .15s}
+  .nums .n:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.34)}
+  /* hover：Hero 按鈕（GitHub／聯絡我）微微上浮＋變亮 */
+  .hero .btn{transition:transform .12s,background .15s,box-shadow .15s,border-color .15s}
+  .hero .btn:hover{transform:translateY(-1px)}
+  .hero .btn.p:hover{background:#3fe6d2;box-shadow:0 6px 16px rgba(43,212,192,.32)}
+  .hero .btn.o:hover{background:rgba(255,255,255,.12);border-color:#cffaf2}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">資料科學 × AI／LLM 應用工程</div>
+    <h1>陳嘉翔 <small>Chia-Hsiang, Chen</small></h1>
+    <p class="tagline">用嚴謹的方法論，把數據與前沿 AI 落地成<strong>真的能用的系統</strong>。</p>
+    <div class="meta">東吳大學 資料科學碩士（在學，2026/7 口試）· 國立中央大學 數學系 </div>
+    <div class="cta">
+      <a class="btn p" href="#works">看作品集 ↓</a>
+      <a class="btn o" href="https://github.com/Raymond-Chen-das" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn o" href="mailto:raymond.chen.das@gmail.com">✉ 聯絡我</a>
+    </div>
+    <div class="nums">
+      <div class="n"><b>7</b><span>個獨立完成專案 · 橫跨 6 大領域</span></div>
+      <div class="n"><b>96.8GB</b><span>最大處理資料量</span></div>
+      <div class="n"><b>2</b><span>個線上可即時試用的作品</span></div>
+      <div class="n"><b>中英日三語</b><span>（JLPT N1·TOEIC 920）</span></div>
+      <div class="n"><b>92.54%</b><span>自建 AI 系統穩定度（代表作）</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ ABOUT ============ -->
+<section><div class="wrap">
+  <div class="h2">關於我</div>
+  <div class="about">
+    <p>橫跨<strong>業務管理、數據分析與 AI 系統工程</strong>三個維度。從統計建模到 LLM 應用系統皆能獨立完成，專案走過完整的資料清理、特徵工程、模型調參、績效評估。習慣以嚴謹方法設計與驗證，效果量優先、誠實揭露侷限的方法論做事。代表作碩士論文以多代理協同架構打造專利 FTO 初篩系統，並提出一套可遷移的 LLM 行為評估方法論。我相信好的 AI 應用不能只是 demo，要經得起檢驗。</p>
+    <div class="skills">
+      <span class="c">Python</span><span class="c">SQL</span><span class="c">R</span>
+      <span class="c">統計建模 (HLM·SHAP·Bootstrap)</span><span class="c">XGBoost / NN / PCA</span>
+      <span class="c">LLM 多代理 / RAG / FAISS</span><span class="c">Prompt Engineering</span><span class="c">wav2vec 2.0</span>
+      <span class="c">FastAPI + React</span><span class="c">polars 大規模 ETL</span><span class="c">pytest / GitHub Actions CI</span>
+      <span class="c">Tableau</span><span class="c">Hugging Face Spaces</span>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ PORTFOLIO ============ -->
+<section id="works"><div class="wrap">
+  <div class="h2">作品集</div>
+  <h2 class="title">7 個我獨立完成的專案</h2>
+  <p class="lead">下面用最白話的方式說每個專案在做什麼；想看程式碼與技術細節的，每張卡都有 GitHub／Demo 連結。</p>
+
+  <div class="grid">
+
+    <!-- 代表作 FTO -->
+    <article class="proj feat">
+      <div class="vbox">
+        <svg class="visual" viewBox="0 0 520 230" preserveAspectRatio="xMidYMid meet" role="img" aria-label="專利 FTO 多代理系統架構">
+          <text x="20" y="26" font-size="13" fill="#0c8b7f" font-weight="700">AI 多代理專利 FTO 初篩系統 · 架構</text>
+          <!-- box1 -->
+          <rect x="14" y="70" width="92" height="62" rx="9" fill="#eafaf7" stroke="#bfe7df"/>
+          <text x="60" y="96" font-size="12.5" fill="#16252a" text-anchor="middle">技術描述</text>
+          <text x="60" y="114" font-size="11" fill="#5d6f75" text-anchor="middle">中文 → 英文</text>
+          <!-- arrow -->
+          <line x1="108" y1="101" x2="124" y2="101" stroke="#9fc7c0" stroke-width="2"/><polygon points="124,96 132,101 124,106" fill="#9fc7c0"/>
+          <!-- box2 retrieval -->
+          <rect x="134" y="70" width="96" height="62" rx="9" fill="#eafaf7" stroke="#bfe7df"/>
+          <text x="182" y="95" font-size="12.5" fill="#16252a" text-anchor="middle">向量檢索</text>
+          <text x="182" y="113" font-size="11" fill="#5d6f75" text-anchor="middle">FAISS + RAG</text>
+          <line x1="232" y1="101" x2="248" y2="101" stroke="#9fc7c0" stroke-width="2"/><polygon points="248,96 256,101 248,106" fill="#9fc7c0"/>
+          <!-- box3 agents -->
+          <rect x="258" y="58" width="118" height="86" rx="9" fill="#15b8a6" stroke="#0c8b7f"/>
+          <text x="317" y="76" font-size="12" fill="#eafffb" text-anchor="middle" font-weight="700">四代理並行</text>
+          <text x="317" y="95" font-size="10.5" fill="#dffff8" text-anchor="middle">保守風險 · 技術比較</text>
+          <text x="317" y="111" font-size="10.5" fill="#dffff8" text-anchor="middle">商業可行 · 法律風險</text>
+          <text x="317" y="131" font-size="10" fill="#bdeee6" text-anchor="middle">GPT-4o-mini</text>
+          <line x1="378" y1="101" x2="394" y2="101" stroke="#9fc7c0" stroke-width="2"/><polygon points="394,96 402,101 394,106" fill="#9fc7c0"/>
+          <!-- box4 meta -->
+          <rect x="404" y="70" width="100" height="62" rx="9" fill="#eafaf7" stroke="#bfe7df"/>
+          <text x="454" y="95" font-size="12.5" fill="#16252a" text-anchor="middle">Meta-Evaluator</text>
+          <text x="454" y="113" font-size="11" fill="#5d6f75" text-anchor="middle">三層推理 → 風險分級</text>
+          <!-- caption -->
+          <text x="20" y="172" font-size="11.5" fill="#5d6f75">輸入 10,000 筆 USPTO 專利　·　200 次受控評估</text>
+          <rect x="20" y="186" width="180" height="26" rx="13" fill="#06302c"/>
+          <text x="34" y="203" font-size="12" fill="#2bd4c0" font-weight="700">系統自洽性 92.54%</text>
+        </svg>
+      </div>
+      <div class="body">
+        <div class="kicker">★ 碩士論文 · 代表作</div>
+        <h3>會自己分析的「專利風險初篩」AI 系統</h3>
+        <p>讓技術人員用中文描述技術，系統就能跨語言檢索美國專利、由四個不同視角的 AI 代理並行評估侵權風險，再整合成風險分級。我從零<strong>獨立打造前後端</strong>（FastAPI + React），並以 200 次受控實驗證明它的行為穩定性達 <strong>92.54%</strong>，同時誠實界定它「能保證穩定、但不取代正式法律意見」。</p>
+        <div class="ptags"><span>LLM 多代理</span><span>RAG / FAISS</span><span>FastAPI + React 全端</span><span>可遷移行為評估方法論</span></div>
+        <div class="acts"><a class="muted">程式碼 — 原始碼非公開，可於面談完整展示系統與程式碼</a></div>
+      </div>
+    </article>
+
+    <!-- 台股情緒 -->
+    <article class="proj">
+      <img class="visual" src="./assets/taiwan_sentiment_space.png" alt="3D 情緒空間視覺化">
+      <div class="body">
+        <div class="kicker">LLM 應用 · 工程嚴謹</div>
+        <h3>用 AI 讀懂網路情緒、預測股市轉折</h3>
+        <p>把 PTT 鄉民的推噓和反諷交給 Claude 判讀真實情緒，再用自寫的最佳化演算法找出「情緒驅動」的盤勢訊號。在嚴格的時間切分下準確率 <strong>62%</strong>（基準 59.2%），並主動抓出、修掉一般人容易忽略的「資料偷看」偏誤，全程用單元測試與 CI 把關。</p>
+        <div class="ptags"><span>LLM 語義分類</span><span>PSO 最佳化</span><span>時間序列</span><span>pytest / CI</span></div>
+        <div class="acts"><a class="gh" href="https://github.com/Raymond-Chen-das/taiwan-stock-sentiment-forecast" target="_blank" rel="noopener">GitHub →</a></div>
+      </div>
+    </article>
+
+    <!-- SER -->
+    <article class="proj">
+      <img class="visual" src="./assets/ser_tsne.png" alt="語音情緒嵌入空間 t-SNE">
+      <div class="body">
+        <div class="kicker">深度學習 · 已上線</div>
+        <h3>讓電腦聽得出「情緒」——換環境也不失準</h3>
+        <p>比較 6 種模型 × 3 種聲音特徵，發現真正關鍵的是「特徵」而非模型（準確率從 ~49% 一路拉到 <strong>73.9%</strong>），並用最嚴格的<strong>跨資料庫</strong>測試證明它換錄音環境仍可用。已部署成<strong>線上服務</strong>，任何人都能上傳語音、當場聽結果。</p>
+        <div class="ptags"><span>PyTorch</span><span>wav2vec 2.0 微調</span><span>跨語料庫驗證</span><span>Hugging Face</span></div>
+        <div class="acts">
+          <a class="live" href="https://huggingface.co/spaces/RaymondChendas/speech-emotion-recognition" target="_blank" rel="noopener">🎧 線上試用</a>
+          <a class="gh" href="https://github.com/Raymond-Chen-das/cross-corpus-speech-emotion-recognition" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Stack Overflow -->
+    <article class="proj">
+      <img class="visual" src="./assets/so_network.png" alt="技術社群知識網路圖">
+      <div class="body">
+        <div class="kicker">大規模資料工程 · 統計</div>
+        <h3>從 96.8GB 資料看 ChatGPT 如何重塑工程師社群</h3>
+        <p>串流處理近 <strong>6,000 萬筆</strong>全球工程師問答（<strong>96.8GB</strong>），用社群網路分析量化「技術社群的知識邊界」，並發現 ChatGPT 問世後，AI 領域的知識連結幾乎<strong>完全重組</strong>（相似度只剩 0.21）。</p>
+        <div class="ptags"><span>polars 串流 ETL</span><span>NetworkX</span><span>社群網路分析</span><span>統計顯著性檢定</span></div>
+        <div class="acts"><a class="gh" href="https://github.com/Raymond-Chen-das/social-network-analysis" target="_blank" rel="noopener">GitHub →</a></div>
+      </div>
+    </article>
+
+    <!-- Garmin (live) -->
+    <article class="proj">
+      <div class="vbox">
+        <svg class="visual" viewBox="0 0 520 208" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Garmin 睡眠活動互動儀表板">
+          <rect x="0" y="0" width="520" height="208" fill="#f6f7fe"/>
+          <text x="26" y="34" font-size="12.5" fill="#6b5bd6" font-weight="700">睡眠 × 活動 · 互動式視覺化儀表板</text>
+          <rect x="20" y="56" width="114" height="92" rx="11" fill="#fff" stroke="#e6e3fb"/>
+          <text x="77" y="102" font-size="26" fill="#7c6cf0" font-weight="800" text-anchor="middle">71</text>
+          <text x="77" y="126" font-size="11" fill="#5d6f75" text-anchor="middle">位使用者</text>
+          <rect x="140" y="56" width="114" height="92" rx="11" fill="#fff" stroke="#e6e3fb"/>
+          <text x="197" y="102" font-size="23" fill="#7c6cf0" font-weight="800" text-anchor="middle">1,031</text>
+          <text x="197" y="126" font-size="11" fill="#5d6f75" text-anchor="middle">高品質配對</text>
+          <rect x="260" y="56" width="114" height="92" rx="11" fill="#fff" stroke="#e6e3fb"/>
+          <text x="317" y="102" font-size="23" fill="#7c6cf0" font-weight="800" text-anchor="middle">99.8%</text>
+          <text x="317" y="126" font-size="11" fill="#5d6f75" text-anchor="middle">PCA 解釋變異</text>
+          <rect x="380" y="56" width="114" height="92" rx="11" fill="#fff" stroke="#e6e3fb"/>
+          <text x="437" y="102" font-size="26" fill="#7c6cf0" font-weight="800" text-anchor="middle">2</text>
+          <text x="437" y="126" font-size="11" fill="#5d6f75" text-anchor="middle">行為群體</text>
+          <text x="26" y="180" font-size="11" fill="#8a89a8">真實穿戴數據 · 2020/10–2023/6 · 平衡型 vs 活躍型</text>
+        </svg>
+      </div>
+      <div class="body">
+        <div class="kicker">真實數據 · 互動儀表板</div>
+        <h3>把穿戴裝置的睡眠數據變成看得懂的儀表板</h3>
+        <p>用真實的智慧手環睡眠 × 活動數據做完整多變量分析，最後做成一個<strong>任何人都能點開互動瀏覽</strong>的線上儀表板。處理第三方個資時也落實資料治理（個資隔離、只公開彙總、提供合成假資料）。</p>
+        <div class="ptags"><span>多變量統計</span><span>互動式儀表板</span><span>GitHub Pages</span><span>資料治理</span></div>
+        <div class="acts">
+          <a class="live" href="https://raymond-chen-das.github.io/garmin-multivariate-analysis/" target="_blank" rel="noopener">📊 開啟互動儀表板</a>
+          <a class="gh" href="https://github.com/Raymond-Chen-das/garmin-multivariate-analysis" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 智能交易 -->
+    <article class="proj">
+      <div class="vbox">
+        <svg class="visual" viewBox="0 0 520 208" preserveAspectRatio="xMidYMid meet" role="img" aria-label="智能交易端到端流程">
+          <rect x="0" y="0" width="520" height="208" fill="#f7fbfb"/>
+          <text x="22" y="34" font-size="13" fill="#0c8b7f" font-weight="700">端到端量化投資流程</text>
+          <!-- pipeline boxes -->
+          <rect x="20" y="78" width="84" height="56" rx="9" fill="#fff" stroke="#cfe7e2"/>
+          <text x="62" y="102" font-size="12" fill="#16252a" text-anchor="middle">三因子</text>
+          <text x="62" y="119" font-size="10" fill="#5d6f75" text-anchor="middle">資料處理</text>
+          <line x1="106" y1="106" x2="120" y2="106" stroke="#9fc7c0" stroke-width="2"/><polygon points="120,101 128,106 120,111" fill="#9fc7c0"/>
+          <rect x="130" y="70" width="104" height="72" rx="9" fill="#15b8a6" stroke="#0c8b7f"/>
+          <text x="182" y="92" font-size="12" fill="#eafffb" text-anchor="middle" font-weight="700">四模型訓練</text>
+          <text x="182" y="110" font-size="10.5" fill="#dffff8" text-anchor="middle">OLS · RF</text>
+          <text x="182" y="125" font-size="10.5" fill="#dffff8" text-anchor="middle">NN · XGBoost</text>
+          <line x1="236" y1="106" x2="250" y2="106" stroke="#9fc7c0" stroke-width="2"/><polygon points="250,101 258,106 250,111" fill="#9fc7c0"/>
+          <rect x="260" y="78" width="80" height="56" rx="9" fill="#fff" stroke="#cfe7e2"/>
+          <text x="300" y="102" font-size="12" fill="#16252a" text-anchor="middle">IC 預測</text>
+          <text x="300" y="119" font-size="10" fill="#5d6f75" text-anchor="middle">滾動重訓</text>
+          <line x1="342" y1="106" x2="356" y2="106" stroke="#9fc7c0" stroke-width="2"/><polygon points="356,101 364,106 356,111" fill="#9fc7c0"/>
+          <rect x="366" y="78" width="76" height="56" rx="9" fill="#fff" stroke="#cfe7e2"/>
+          <text x="404" y="102" font-size="12" fill="#16252a" text-anchor="middle">投組構建</text>
+          <text x="404" y="119" font-size="10" fill="#5d6f75" text-anchor="middle">多空策略</text>
+          <line x1="444" y1="106" x2="458" y2="106" stroke="#9fc7c0" stroke-width="2"/><polygon points="458,101 466,106 458,111" fill="#9fc7c0"/>
+          <rect x="468" y="78" width="44" height="56" rx="9" fill="#eafaf7" stroke="#bfe7df"/>
+          <text x="490" y="100" font-size="10.5" fill="#0c8b7f" text-anchor="middle">績效</text>
+          <text x="490" y="116" font-size="9" fill="#5d6f75" text-anchor="middle">評估</text>
+          <text x="22" y="174" font-size="11.5" fill="#5d6f75">滾動視窗每月重訓四種模型 · 系統性比較 · 約 1,660 行 Python</text>
+        </svg>
+      </div>
+      <div class="body">
+        <div class="kicker">機器學習 · 量化投資</div>
+        <h3>用四種機器學習模型挑台股因子、組投資組合</h3>
+        <p>完整跑過「資料 → 四種模型訓練 → 預測 → 投組 → 績效」的量化投資流程，系統性比較 OLS、隨機森林、神經網路與 XGBoost 哪個最會挑因子（約 1,660 行 Python）。</p>
+        <div class="ptags"><span>四模型比較</span><span>端到端 pipeline</span><span>滾動重訓</span></div>
+        <div class="acts"><a class="gh" href="https://github.com/Raymond-Chen-das/intelligent-transaction" target="_blank" rel="noopener">GitHub →</a></div>
+      </div>
+    </article>
+
+    <!-- Moral Machine -->
+    <article class="proj">
+      <div class="vbox">
+        <svg class="visual" viewBox="0 0 520 208" preserveAspectRatio="xMidYMid meet" role="img" aria-label="道德判斷貢獻度">
+          <rect x="0" y="0" width="520" height="208" fill="#f7fbfb"/>
+          <text x="22" y="34" font-size="14" fill="#16252a" font-weight="700">什麼主導人類的道德判斷？</text>
+          <text x="22" y="52" font-size="11" fill="#5d6f75">以 SHAP 拆解 18.7 萬筆衝突情境的特徵貢獻</text>
+          <!-- bar 1 -->
+          <text x="22" y="86" font-size="12.5" fill="#16252a">情境</text>
+          <rect x="92" y="74" width="372" height="18" rx="5" fill="#eef3f3"/>
+          <rect x="92" y="74" width="197" height="18" rx="5" fill="#15b8a6"/>
+          <text x="298" y="88" font-size="12" fill="#0c8b7f" font-weight="700">~53%</text>
+          <!-- bar 2 -->
+          <text x="22" y="124" font-size="12.5" fill="#16252a">個人特質</text>
+          <rect x="92" y="112" width="372" height="18" rx="5" fill="#eef3f3"/>
+          <rect x="92" y="112" width="93" height="18" rx="5" fill="#7fd6c9"/>
+          <text x="194" y="126" font-size="12" fill="#0c8b7f" font-weight="700">~25%</text>
+          <!-- bar 3 -->
+          <text x="22" y="162" font-size="12.5" fill="#16252a">文化背景</text>
+          <rect x="92" y="150" width="372" height="18" rx="5" fill="#eef3f3"/>
+          <rect x="92" y="150" width="71" height="18" rx="5" fill="#bfe7df"/>
+          <text x="172" y="164" font-size="12" fill="#0c8b7f" font-weight="700">~19%</text>
+          <text x="22" y="192" font-size="11" fill="#5d6f75">結論：情境的影響遠大於個人或文化 — 強力支持「情境主義」</text>
+        </svg>
+      </div>
+      <div class="body">
+        <div class="kicker">統計建模 · 可解釋性</div>
+        <h3>1,128 萬筆資料：道德判斷是天性還是情境？</h3>
+        <p>從全球 <strong>1,128 萬筆</strong>道德兩難資料精煉分析，用階層模型與 SHAP 發現「<strong>情境</strong>」對道德判斷的影響遠大於個人或文化背景，並誠實揭露資料本身的測量陷阱。</p>
+        <div class="ptags"><span>HLM 階層模型</span><span>XGBoost + SHAP</span><span>效果量導向</span></div>
+        <div class="acts"><a class="gh" href="https://github.com/Raymond-Chen-das/study_moral_judgment_law_utility" target="_blank" rel="noopener">GitHub →</a></div>
+      </div>
+    </article>
+
+  </div>
+</div></section>
+
+<!-- ============ INFO ============ -->
+<section><div class="wrap">
+  <div class="h2">經歷與背景</div>
+  <div class="info" style="margin-top:18px">
+    <div>
+      <h4>工作經歷</h4>
+      <div class="xp">
+        <div class="r">助理管理師</div><div class="o">臺北自來水事業處 · 營業分處</div><div class="d">2021/11 – 迄今</div>
+        <ul>
+          <li>於 5 人團隊中擔任主要承辦、負責約半數業務量；每日處理數萬筆抄表資料的異常用水量偵測。以規則式門檻觸發警示，交叉比對歷史趨勢、水栓記錄與資料異動紀錄，進行事前異常判斷與事後流程修正，守住資料品質與帳單正確性。</li>
+          <li>監控大用水戶（月用量 > 1,000 度），協調外勤複查、處理用水異議與客訴。</li>
+          <li>兼任部門臨時數據分析任務的交辦窗口；以 Excel 與 Tableau 進行數據加工與多維度儀表板，將分析結論轉譯為非技術背景同仁與主管可理解的形式。</li>
+          <li>在資料基礎設施相對有限的環境中，培養「從原始數據提煉有效訊號」的判斷力與跨部門溝通協調能力。</li>
+        </ul>
+      </div>
+      <div class="xp">
+        <div class="r">專利訴訟文件審核（約聘）</div><div class="o">FRONTEO Taiwan, Inc.</div><div class="d">2020/5 – 2021/9</div>
+        <ul>
+          <li>運用中、英、日三語能力，審查國際專利訴訟雙方提交的機密技術文件（電子蒐證 eDiscovery），進行人工檢視與關鍵文件標記，協助律師事務所篩選訴訟可用資料。</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <h4>學歷</h4>
+      <ul class="plain">
+        <li><strong>東吳大學</strong>　資料科學系 碩士在職專班<br>2024/9 – 2026/6（在學，2026/7 口試）</li>
+        <li><strong>國立中央大學</strong>　數學系 學士<br>2015/9 – 2019/6</li>
+      </ul>
+      <h4 style="margin-top:18px">語言</h4>
+      <ul class="plain"><li>中文（母語）· 英文（精通）· 日文（精通）</li></ul>
+    </div>
+    <div>
+      <h4>證照</h4>
+      <ul class="plain">
+        <li><strong>AI 應用規劃師（機器學習）中級</strong><br>經濟部產業發展署</li>
+        <li><strong>JLPT 日本語能力試驗 N1</strong></li>
+        <li><strong>TOEIC（多益）920</strong></li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap">
+    想看技術細節與完整程式碼？　<a href="https://github.com/Raymond-Chen-das" target="_blank" rel="noopener">github.com/Raymond-Chen-das</a>　·　<a href="mailto:raymond.chen.das@gmail.com">✉ raymond.chen.das@gmail.com</a>
+    <div style="margin-top:8px;color:#79b3aa;font-size:12px">陳嘉翔 Chia-Hsiang, Chen · 資料科學 × AI 應用工程</div>
+  </div>
+</footer>
+
+</body>
+</html>
