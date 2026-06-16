@@ -123,9 +123,9 @@
       <a class="btn o" href="mailto:raymond.chen.das@gmail.com">✉ 聯絡我</a>
     </div>
     <div class="nums">
-      <div class="n"><b>7</b><span>個獨立完成專案 · 橫跨 6 大領域</span></div>
+      <div class="n"><b>8</b><span>個獨立完成專案 · 橫跨 7 大領域</span></div>
       <div class="n"><b>96.8GB</b><span>最大處理資料量</span></div>
-      <div class="n"><b>2</b><span>個線上可即時試用的作品</span></div>
+      <div class="n"><b>3</b><span>個線上可互動的作品（Demo＋儀表板）</span></div>
       <div class="n"><b>中英日三語</b><span>（JLPT N1·TOEIC 920）</span></div>
       <div class="n"><b>92.54%</b><span>自建 AI 系統穩定度（代表作）</span></div>
     </div>
@@ -150,7 +150,7 @@
 <!-- ============ PORTFOLIO ============ -->
 <section id="works"><div class="wrap">
   <div class="h2">作品集</div>
-  <h2 class="title">7 個我獨立完成的專案</h2>
+  <h2 class="title">8 個我獨立完成的專案</h2>
   <p class="lead">下面用最白話的方式說每個專案在做什麼；想看程式碼與技術細節的，每張卡都有 GitHub／Demo 連結。</p>
 
   <div class="grid">
@@ -339,6 +339,43 @@
         <p>從全球 <strong>1,128 萬筆</strong>道德兩難資料精煉分析，用階層模型與 SHAP 發現「<strong>情境</strong>」對道德判斷的影響遠大於個人或文化背景，並誠實揭露資料本身的測量陷阱。</p>
         <div class="ptags"><span>HLM 階層模型</span><span>XGBoost + SHAP</span><span>效果量導向</span></div>
         <div class="acts"><a class="gh" href="https://github.com/Raymond-Chen-das/study_moral_judgment_law_utility" target="_blank" rel="noopener">GitHub →</a></div>
+      </div>
+    </article>
+
+    <!-- Olist（資料分析師主打，置於最後）-->
+    <article class="proj">
+      <div class="vbox">
+        <svg class="visual" viewBox="0 0 520 208" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Olist 客戶分析成果">
+          <rect x="0" y="0" width="520" height="208" fill="#F3EFE6"/>
+          <text x="24" y="34" font-size="11.5" fill="#C1432B" font-weight="700" letter-spacing="1">OLIST — 端到端客戶分析 · SQL / RFM / COHORT</text>
+          <line x1="24" y1="48" x2="496" y2="48" stroke="#1C1814" stroke-width="1.5"/>
+          <text x="24" y="106" font-size="34" fill="#C1432B" font-weight="800">97%</text>
+          <text x="24" y="128" font-size="10.5" fill="#5A5147">客戶只買一次</text>
+          <text x="24" y="143" font-size="10.5" fill="#5A5147">（複購率 3%）</text>
+          <line x1="142" y1="66" x2="142" y2="150" stroke="#1C1814" stroke-opacity="0.16"/>
+          <text x="158" y="106" font-size="34" fill="#1F4D43" font-weight="800">31%</text>
+          <text x="158" y="128" font-size="10.5" fill="#5A5147">營收來自</text>
+          <text x="158" y="143" font-size="10.5" fill="#5A5147">16.5% 高價值客</text>
+          <line x1="274" y1="66" x2="274" y2="150" stroke="#1C1814" stroke-opacity="0.16"/>
+          <text x="290" y="106" font-size="34" fill="#C1432B" font-weight="800">1.8×</text>
+          <text x="290" y="128" font-size="10.5" fill="#5A5147">複購名單</text>
+          <text x="290" y="143" font-size="10.5" fill="#5A5147">top-decile lift</text>
+          <line x1="406" y1="66" x2="406" y2="150" stroke="#1C1814" stroke-opacity="0.16"/>
+          <text x="422" y="106" font-size="28" fill="#1F4D43" font-weight="800">&lt;0.7%</text>
+          <text x="422" y="128" font-size="10.5" fill="#5A5147">第 1–6 月</text>
+          <text x="422" y="143" font-size="10.5" fill="#5A5147">cohort 留存</text>
+          <text x="24" y="182" font-size="11" fill="#5A5147">留存懸崖 → 獲取型生意；複購由「首單品類」驅動（~6×）</text>
+        </svg>
+      </div>
+      <div class="body">
+        <div class="kicker">SQL · 客戶分析 · 資料分析師主打</div>
+        <h3>從 9 張交易表回答「客戶是誰、誰會回來」</h3>
+        <p>以 <strong>純 SQL</strong>（NTILE／window function／cohort）在 SQLite 建關聯式資料庫，對 9.3 萬客戶做 RFM 與 K-means 分群、cohort 留存；再用<strong>防資料洩漏</strong>的排序模型從新客挖高潛力複購名單。並以假設檢定<strong>推翻「服務好就會留存」</strong>——留存看的是首單品類，不是配送或評論；模型天花板也誠實揭露。</p>
+        <div class="ptags"><span>SQL（NTILE/window/cohort）</span><span>RFM / K-means</span><span>防洩漏建模</span><span>假設檢定</span></div>
+        <div class="acts">
+          <a class="live" href="https://raymond-chen-das.github.io/olist-customer-analysis/" target="_blank" rel="noopener">📊 開啟互動儀表板</a>
+          <a class="gh" href="https://github.com/Raymond-Chen-das/olist-customer-analysis" target="_blank" rel="noopener">GitHub →</a>
+        </div>
       </div>
     </article>
 
