@@ -123,7 +123,7 @@
       <a class="btn o" href="mailto:raymond.chen.das@gmail.com">✉ 聯絡我</a>
     </div>
     <div class="nums">
-      <div class="n"><b>8</b><span>個獨立完成專案 · 橫跨 7 大領域</span></div>
+      <div class="n"><b>9</b><span>個獨立完成專案 · 橫跨 8 大領域</span></div>
       <div class="n"><b>96.8GB</b><span>最大處理資料量</span></div>
       <div class="n"><b>3</b><span>個線上可互動的作品（Demo＋儀表板）</span></div>
       <div class="n"><b>中英日三語</b><span>（JLPT N1·TOEIC 920）</span></div>
@@ -150,7 +150,7 @@
 <!-- ============ PORTFOLIO ============ -->
 <section id="works"><div class="wrap">
   <div class="h2">作品集</div>
-  <h2 class="title">8 個我獨立完成的專案</h2>
+  <h2 class="title">9 個我獨立完成的專案</h2>
   <p class="lead">下面用最白話的方式說每個專案在做什麼；想看程式碼與技術細節的，每張卡都有 GitHub／Demo 連結。</p>
 
   <div class="grid">
@@ -266,6 +266,47 @@
           <a class="live" href="https://raymond-chen-das.github.io/garmin-multivariate-analysis/" target="_blank" rel="noopener">📊 開啟互動儀表板</a>
           <a class="gh" href="https://github.com/Raymond-Chen-das/garmin-multivariate-analysis" target="_blank" rel="noopener">GitHub →</a>
         </div>
+      </div>
+    </article>
+
+    <!-- SECOM（製造業數據分析主打，置於核心群）-->
+    <article class="proj">
+      <div class="vbox">
+        <svg class="visual" viewBox="0 0 520 208" preserveAspectRatio="xMidYMid meet" role="img" aria-label="SECOM 三範式 PR-AUC 同尺對照">
+          <rect x="0" y="0" width="520" height="208" fill="#eef1f6"/>
+          <text x="24" y="30" font-size="13" fill="#2b3a55" font-weight="700">SECOM — 半導體製程瑕疵偵測</text>
+          <text x="24" y="47" font-size="10.5" fill="#6b7785">三範式同尺對照 · PR-AUC（條越長＝越能揪出瑕疵）</text>
+          <!-- axis origin -->
+          <line x1="158" y1="56" x2="158" y2="164" stroke="#d4dae3" stroke-width="1"/>
+          <!-- Row1 XGBoost -->
+          <text x="150" y="74" font-size="10" fill="#44505e" text-anchor="end">XGBoost·監督</text>
+          <rect x="158" y="62" width="286" height="16" rx="4" fill="#3b53d6"/>
+          <text x="450" y="75" font-size="10.5" fill="#2b3a55" font-weight="600">0.183 <tspan fill="#3b53d6" font-weight="700">上限</tspan></text>
+          <!-- Row2 IsolationForest -->
+          <text x="150" y="101" font-size="10" fill="#44505e" text-anchor="end">IsolationForest</text>
+          <rect x="158" y="89" width="179" height="16" rx="4" fill="#e0573f"/>
+          <text x="343" y="102" font-size="10.5" fill="#2b3a55" font-weight="600">0.115 <tspan fill="#e0573f" font-weight="700">63%</tspan></text>
+          <!-- Row3 Autoencoder -->
+          <text x="150" y="128" font-size="10" fill="#44505e" text-anchor="end">Autoencoder</text>
+          <rect x="158" y="116" width="176" height="16" rx="4" fill="#8b5cf6"/>
+          <text x="340" y="129" font-size="10.5" fill="#2b3a55" font-weight="600">0.113 <tspan fill="#8b5cf6" font-weight="700">62%</tspan></text>
+          <!-- Row4 LOF -->
+          <text x="150" y="155" font-size="10" fill="#44505e" text-anchor="end">LOF</text>
+          <rect x="158" y="143" width="159" height="16" rx="4" fill="#16a085"/>
+          <text x="323" y="156" font-size="10.5" fill="#2b3a55" font-weight="600">0.102 <tspan fill="#16a085" font-weight="700">55%</tspan></text>
+          <!-- random baseline (drawn on top so it reads as the bar that all models beat) -->
+          <line x1="278" y1="56" x2="278" y2="164" stroke="#9aa3ad" stroke-width="1.2" stroke-dasharray="4 3"/>
+          <text x="282" y="54" font-size="9.5" fill="#9aa3ad">隨機 0.077</text>
+          <!-- caption -->
+          <text x="24" y="192" font-size="11" fill="#5d6f75">不用瑕疵標籤的異常偵測 ≈ 監督式 62–63%　·　590 感測特徵 · fail 6.64%</text>
+        </svg>
+      </div>
+      <div class="body">
+        <div class="kicker">製程瑕疵偵測 · 不平衡學習</div>
+        <h3>瑕疵標籤又少又貴，還能教 AI 揪出不良品嗎？</h3>
+        <p>半導體生產線上每片晶圓有 <strong>590 個匿名感測器</strong>讀數，但只有 <strong>6.64%</strong> 是瑕疵品——標籤又少又貴。我把監督式 XGBoost 和兩種<strong>異常偵測</strong>（Isolation Forest、Autoencoder）放到<strong>同一把尺</strong>上比，發現<strong>完全不用瑕疵標籤</strong>的異常偵測能達到監督式 <strong>62–63%</strong> 的辨識力。全程禁用會騙人的 accuracy（全猜良品有 92% 卻抓不到半個瑕疵）、改用 PR-AUC，再以<strong>成本敏感門檻</strong>接到「漏檢 vs 誤殺」的真實決策；最後用獨立稽核確認沒有資料洩漏，並誠實揭露方法的天花板。</p>
+        <div class="ptags"><span>三範式同尺對照</span><span>半監督異常偵測</span><span>PR-AUC／成本決策</span><span>防洩漏＋壓力測試</span></div>
+        <div class="acts"><a class="gh" href="https://github.com/Raymond-Chen-das/SECOM_defect_detection" target="_blank" rel="noopener">GitHub →</a></div>
       </div>
     </article>
 
